@@ -1,0 +1,8 @@
+﻿{
+  "Title": "ciao",
+  "Input": "$",
+  "Save": true,
+  "Mode": "here",
+  "Process": "cmd",
+  "StartDirectory": "C:\\"
+}
