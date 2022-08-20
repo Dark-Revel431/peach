@@ -1,4 +1,4 @@
-﻿namespace peach;
+﻿namespace peach.Data;
 
 public enum Modes
 {

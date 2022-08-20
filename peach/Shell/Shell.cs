@@ -1,4 +1,4 @@
-﻿namespace peach;
+﻿namespace peach.Shell;
 
 internal class Shell
 {
@@ -6,14 +6,14 @@ internal class Shell
 
     internal static void Start()
     {
-        LIMIT_INPUT = Data.Process.Length + 3;
+        LIMIT_INPUT = Data.Data.Process.Length + 3;
 
         while (true)
         {
             Input.PrintInput();
             string command = Input.GetInput();
 
-            // here.
+            // Here.
         }
     }
 }

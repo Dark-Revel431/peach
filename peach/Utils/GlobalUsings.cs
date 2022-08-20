@@ -4,4 +4,7 @@ global using Newtonsoft.Json;
 global using System.IO;
 global using System.Collections.Generic;
 
-namespace peach;
+global using peach.Data;
+global using peach.Utils;
+
+namespace peach.Utils;

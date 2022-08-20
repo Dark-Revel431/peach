@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace peach;
+﻿namespace peach.Utils;
 
 internal class Input
 {
@@ -14,7 +12,7 @@ internal class Input
 
         Console.WriteLine("]");
 
-        Console.Write($"{Data.Process}/{Data.Input} ");
+        Console.Write($"{Data.Data.Process}/{Data.Data.Input} ");
     }
 
     internal static string GetInput()
@@ -41,12 +39,12 @@ internal class Input
             }
             else if (key.Key == ConsoleKey.Backspace)
             {
-                if (Console.CursorLeft > Shell.LIMIT_INPUT)
+                if (Console.CursorLeft > Shell.Shell.LIMIT_INPUT)
                 {
                     Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                     Console.Write(" ");
                     Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                    text.RemoveAt(Console.CursorLeft - Shell.LIMIT_INPUT);
+                    text.RemoveAt(Console.CursorLeft - Shell.Shell.LIMIT_INPUT);
                 }
             }
             else if (key.Key == ConsoleKey.P && key.Modifiers == ConsoleModifiers.Alt)
@@ -152,9 +150,9 @@ internal class Input
                             Console.Write(" ");
                         }
                         Console.SetCursorPosition(Console.CursorLeft - LENGTH, Console.CursorTop);
-                        
-                        Console.Write(Data.Commands[ARROW_COUNT]);
-                        LENGTH = Data.Commands[ARROW_COUNT].Length;
+
+                        Console.Write(Data.Data.Commands[ARROW_COUNT]);
+                        LENGTH = Data.Data.Commands[ARROW_COUNT].Length;
                     }
                     catch
                     {
@@ -164,7 +162,7 @@ internal class Input
 
                     if (keyArrow.Key == ConsoleKey.RightArrow || keyArrow.Key == ConsoleKey.UpArrow)
                     {
-                        if (!(ARROW_COUNT == Data.Commands.Count - 1))
+                        if (!(ARROW_COUNT == Data.Data.Commands.Count - 1))
                         {
                             ARROW_COUNT++;
                         }
@@ -190,7 +188,7 @@ internal class Input
                     }
                     else if (keyArrow.Key == ConsoleKey.Enter)
                     {
-                        foreach (char c in Data.Commands[ARROW_COUNT])
+                        foreach (char c in Data.Data.Commands[ARROW_COUNT])
                         {
                             text.Add(c);
                         }
@@ -202,7 +200,7 @@ internal class Input
                             Console.Write(" ");
                         }
                         Console.SetCursorPosition(Console.CursorLeft - LENGTH, Console.CursorTop);
-                        Console.Write(Data.Commands[ARROW_COUNT]);
+                        Console.Write(Data.Data.Commands[ARROW_COUNT]);
                         break;
                     }
                 }

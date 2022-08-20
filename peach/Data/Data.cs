@@ -1,4 +1,4 @@
-﻿namespace peach;
+﻿namespace peach.Data;
 
 internal static class Data
 {

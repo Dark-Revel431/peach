@@ -13,19 +13,19 @@ internal class ParseConfig
 
         if (JsonObject != null)
         {
-            Data.Title = JsonObject.Title;
-            Data.Save = JsonObject.Save;
+            Data.Data.Title = JsonObject.Title;
+            Data.Data.Save = JsonObject.Save;
 
             if (!string.IsNullOrWhiteSpace(JsonObject.Input))
             {
-                Data.Input = JsonObject.Input[0];
+                Data.Data.Input = JsonObject.Input[0];
             }
             else
             {
-                Data.Input = '$';
+                Data.Data.Input = '$';
             }
 
-            Data.Mode = JsonObject.Mode switch
+            Data.Data.Mode = JsonObject.Mode switch
             {
                 "status" => Modes.status,
                 "hide" => Modes.hide,
@@ -36,16 +36,16 @@ internal class ParseConfig
             {
                 if (Environment.OSVersion.VersionString.Contains("Windows"))
                 {
-                    Data.Process = "cmd";
+                    Data.Data.Process = "cmd";
                 }
                 else
                 {
-                    Data.Process = "bash";
+                    Data.Data.Process = "bash";
                 }
             }
             else
             {
-                Data.Process = JsonObject.Process;
+                Data.Data.Process = JsonObject.Process;
             }
 
             if (Directory.Exists(JsonObject.StartDirectory))
